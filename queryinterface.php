@@ -5,7 +5,7 @@ require_once 'errorHandler.php';
 require_once 'bookmark.php';
 require_once 'user.php';
 require_once 'action.php';
-// require_once 'extendActions.php';
+require_once 'extendActions.php';
 
 ini_set('display_errors',1); 
 error_reporting(E_ALL);
