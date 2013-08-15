@@ -9,7 +9,7 @@ class DatabaseConnection {
     }
   }
 
-  public function getProducts(){//Move it to another class if you wish
+  public function getProducts(){
     $this->query($sql_to_get_products);
   }
 
@@ -20,12 +20,8 @@ class DatabaseConnection {
     return $this->connection->query($sql);
   }
 	
-  public function lastInsertId(){
-  	return $this->connection->insert_id;
-  }
-  
   public function setConnection(){
-    $this->connection = new MySQLi("localhost", "root", "root", "Bookmark") ;
+    $this->connection = new MySQLi("localhost", "root", "root", "Bookmark") ; //<< setup your database credentials
   }
 
   public function connectionAvailable(){

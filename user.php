@@ -1,14 +1,14 @@
 <?
 
 
-class User{
+class user{
 	private $bookmarks;
 	private $id;
 	private $userSince;
 	private $quota;
 	
-	public function performUserAction(Action $action, bookmark $bookmark){
-		$action->PerformAction($this,$bookmark);
+	public function performUserAction(Action $action){
+		$action->PerformAction($this);
 	}
 	
 	public function getBookmarks(){
@@ -38,13 +38,11 @@ class userFactory{
 		$result=$mysql->query($query);
 		$row = $result->fetch_array();
 		if($row['count']<1) return NULL; //No user registered with this APIKey
-		return new User($row['id'],$row['usersince'],$row['quota']);
+		return new user($apikey,$row['usersince'],$row['quota']); //Only one user
 	}
 	
 	static function checkDataRequirement(){
-		if(!(isset($_REQUEST['apikey']) )){
-			die("Insufficient parameters supplied.");
-		}
+		if(!(isset($_REQUEST['apikey']) )) errorHandle::Terminate(errorHandle::NULL_API_K);
 	}
 }
 
