@@ -18,7 +18,8 @@ Sample url: /queryinterface.php?apikey=super11key&action=AddBookmark&lat=433.33&
 Currently the response is always in JSON format.  
 
 Setup:  
-Import bookmarks.sql to mySQL  
+1. Import bookmarks.sql to mySQL  
+2. Setup your database credentials in connectionManager.php    
 
 
 To do:  
