@@ -1,5 +1,7 @@
 <?
-
+/*
+ * mySQL Database connection manager
+ */
 class DatabaseConnection {
   public $connection = null ;
 
@@ -21,7 +23,11 @@ class DatabaseConnection {
   }
 	
   public function setConnection(){
-    $this->connection = new MySQLi("localhost", "root", "root", "Bookmark") ; //<< setup your database credentials
+  	$host="localhost";
+	$user="root";
+	$password="root";
+	$db="Bookmark";
+    $this->connection = new MySQLi($host, $user ,$password ,$db ) ; //<< setup your database credentials
   }
 
   public function connectionAvailable(){

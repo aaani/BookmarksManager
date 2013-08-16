@@ -1,6 +1,8 @@
 <?
 
-
+/* User class
+ * TO DO: Add support for multiple users per API key 
+ * */
 class user{
 	private $bookmarks;
 	private $id;
@@ -28,7 +30,9 @@ class user{
 	}
 }
 
-
+/*
+ * User factory class; It returns the imaginary (super) user, whose id is same as the API key
+ */
 class userFactory{
 	
 	static function getUser($apikey){

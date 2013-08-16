@@ -1,5 +1,8 @@
 <?
 
+/*
+ * Bookmark class
+ */
 class bookmark{
 	public $id;
 	public $lat;

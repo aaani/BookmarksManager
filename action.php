@@ -1,11 +1,21 @@
 <?
 
 abstract class Action{
+	/* Imlementation for your action
+	 * Interact with database using DatabaseConnection class
+	 * */
 	abstract function PerformAction(user $user);
+	
+	/* Implement any kind of check on the request superglobals
+	 * Commonly used to throw error if client hasn't sent appropriate data
+	 */
 	abstract function CheckDataRequirement();
 }
 
 
+/*
+ * Sample implementation for adding bookmarks
+ */
 class AddBookmark extends Action{
 	function PerformAction(user $user){
 		
@@ -32,6 +42,9 @@ class AddBookmark extends Action{
 	}
 }
 
+/*
+ * Sample implementation for deleting bookmarks
+ */
 class DeleteBookmark extends Action{
 	function PerformAction(user $user){
 		
@@ -53,7 +66,9 @@ class DeleteBookmark extends Action{
 	}
 }
 
-
+/*
+ * Sample implementation for listing all bookmarks
+ */
 class ListBookmark extends Action{
 	function PerformAction(user $user){
 						
