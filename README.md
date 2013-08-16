@@ -12,6 +12,10 @@ queryinterface.php is the script that client will communicate with. Currently it
 5. address: user friendly address  
 6. type: type of bookmark like 'home', 'office' (freetext)  
 
+Setup:  
+Import bookmarks.sql to mySQL  
+
+
 To do:  
 1. Support users per API key, currently only one user supported!  
 2. Make error handling flexible.  
