@@ -3,7 +3,7 @@ BookmarksManager
 
 A service written in PHP that allows client to bookmark geographical locations. Each bookmark is identified by latitude and longitude. Refer bookmark.php to see the structure of bookmark class.  
 
-A sample implementation for AddBookmark, DeleteBookmark and ListBookmark actions is provided in action.php file. you can add your custom actions in extendActions.php by extending the Action abstract class (action.php).  
+A sample implementation for AddBookmark, DeleteBookmark and ListBookmark actions is provided in action.php file. You can add your custom actions in extendActions.php by extending the Action class (refer action.php).  
 
 queryinterface.php is the script that the client will communicate with. Currently it accepts following request parameters:  
 1. action: what action do you want to do, currently 'AddBookmark', 'DeleteBookmark' and 'ListBookmark' actions are supported. Refer action.php file to see what parameters these actions expect.  
@@ -23,6 +23,6 @@ Import bookmarks.sql to mySQL
 
 To do:  
 1. Support users per API key, currently only one user supported!  
-2. Support more response format. Currently only json supported.
-2. Make error handling flexible.  
-3. Make database handling flexible. (support multiple databases)
+2. Support more response format. Currently only the JSON format is supported.  
+3. Make error handling flexible.  
+4. Make database handling flexible. (support multiple databases)
