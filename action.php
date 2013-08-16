@@ -24,10 +24,10 @@ class AddBookmark extends Action{
 		$type="";
 		if(isset($_REQUEST['type'])) $type=$_REQUEST['type'];
 
-		$bookmark=new bookmark($_REQUEST['apikey'],$_REQUEST['lat'],$_REQUEST['lng'],$addr, $type);
+		$mysql= new DatabaseConnection();
+		$bookmark=new bookmark($mysql->escape($_REQUEST['apikey']),$mysql->escape($_REQUEST['lat']),$mysql->escape($_REQUEST['lng']),$mysql->escape($addr), $mysql->escape($type));
 			
 		$query="Insert into bookmarks (id,latitude,longitude,address,type,userid) values ('$bookmark->id','$bookmark->lat','$bookmark->lng','$bookmark->address','$bookmark->name','".$user->id."')";
-		$mysql= new DatabaseConnection();
 		
 		if(!$mysql->query($query)){
 			$result['errormessage']=$mysql->connection->error;
@@ -48,10 +48,10 @@ class AddBookmark extends Action{
 class DeleteBookmark extends Action{
 	function PerformAction(user $user){
 		
-		$bookmark=new bookmark($_REQUEST['apikey'],$_REQUEST['lat'],$_REQUEST['lng'],"","");
+		$mysql= new DatabaseConnection();
+		$bookmark=new bookmark($mysql->escape($_REQUEST['apikey']),$mysql->escape($_REQUEST['lat']),$mysql->escape($_REQUEST['lng']),"","");
 				
 		$query="Delete from bookmarks where latitude='$bookmark->lat' AND longitude='$bookmark->lng' AND userid='$user->id'";
-		$mysql= new DatabaseConnection();
 		
 		if(!$mysql->query($query)){
 			$result['errormessage']=$mysql->connection->error;

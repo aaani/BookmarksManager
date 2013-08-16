@@ -21,6 +21,13 @@ class DatabaseConnection {
     }
     return $this->connection->query($sql);
   }
+  
+  public function escape($val){
+  	if (!$this->connection || !$this->connection->ping()){
+      $this->setConnection() ;
+    }
+  	return $this->connection->real_escape_string($val);
+  }
 	
   public function setConnection(){
   	$host="localhost";

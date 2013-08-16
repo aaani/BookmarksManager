@@ -36,8 +36,10 @@ class user{
 class userFactory{
 	
 	static function getUser($apikey){
-		$query="select *, count(*) as count from users where apikey='$apikey'";
+
 		$mysql= new DatabaseConnection();
+		$apikey=$mysql->escape($apikey);
+		$query="select *, count(*) as count from users where apikey='$apikey'";
 		
 		$result=$mysql->query($query);
 		$row = $result->fetch_array();
