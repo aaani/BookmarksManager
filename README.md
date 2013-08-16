@@ -13,8 +13,9 @@ queryinterface.php is the script that the client will communicate with. Currentl
 5. address: user friendly address  
 6. type: type of bookmark like 'home', 'office' (freetext)  
 
-Sample url: /BookmarksManager/queryinterface.php?apikey=super11key&action=AddBookmark&lat=433.33&lng=-343.33&address=221%20h%20pt%20road&type=home  
-Currently the reponse is always in json format.  
+Sample url: /queryinterface.php?apikey=super11key&action=AddBookmark&lat=433.33&lng=-343.33&address=221%20h%20pt%20road&type=home  
+
+Currently the response is always in JSON format.  
 
 Setup:  
 Import bookmarks.sql to mySQL  
